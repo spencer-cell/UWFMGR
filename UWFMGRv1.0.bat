@@ -30,6 +30,7 @@ if /I %OPT%==5 goto :service
 if /I %OPT%==6 goto :exit
 if /I %OPT%==7 goto :rest
 if /I %OPT%==8 goto :shut
+goto :begin
 :: Select option and goto OPT defined in /p prompt 
 
 :: Enable UWF/Unified Write Filter.
@@ -71,6 +72,7 @@ if /I %OPT1%==3b goto :add1
 if /I %OPT1%==3c goto :vw
 if /I %OPT1%==3d goto :remove
 if /I %OPT1%==3e goto :begin
+goto :filter
 
 :: Add file exception, Prompt for FILE\PATH and runs with file add-exclusions modifiers.
 :add
@@ -137,6 +139,7 @@ if /I %OPT2%==4e goto Get-Consump
 if /I %OPT2%==4f goto Get-Free
 if /I %OPT2%==4g goto Set-Type
 if /I %OPT2%==4h goto :begin
+goto :over
 
 :: Get overlay config and display.
 :Get-Config
@@ -213,6 +216,7 @@ if /I "%OPT3%"=="" goto :service
 if /I %OPT3%==5a goto :reboot
 if /I %OPT3%==5b goto :updaten
 if /I %OPT3%==5c goto :begin
+goto :service
 
 :: Enable service service acct. Will be logged in auto on reboot.
 :reboot
@@ -235,20 +239,6 @@ goto :service
 :: Exit the utility.
 :exit
 exit
-
-:: UWF has a reboot process that is required.
-:rest
-color 06
-echo                              !!RESTARTING!!
-timeout -t 5 > NUL
-uwfmgr restart
-
-:: UWF has a shutdown process that stops windows from trying to make writes at shutdown causing delays in the process.
-:shut
-color 04
-echo                             !!SHUTTING DOWN!!
-timeout -t 5 > NUL
-uwfmgr shutdown
 
 
 
