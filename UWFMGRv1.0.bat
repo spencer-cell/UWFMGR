@@ -238,6 +238,7 @@ exit
 
 :: UWF has a reboot process that is required.
 :rest
+cls
 color 06
 echo                              !!RESTARTING!!
 timeout -t 5 > NUL
@@ -245,6 +246,7 @@ uwfmgr restart
 
 :: UWF has a shutdown process that stops windows from trying to make writes at shutdown causing delays in the process.
 :shut
+cls
 color 04
 echo                             !!SHUTTING DOWN!!
 timeout -t 5 > NUL
