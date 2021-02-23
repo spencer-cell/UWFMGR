@@ -18,7 +18,10 @@ echo     //     //////// //      // //         //       //     //
 echo		          Unified Write Filter Manager
 echo      1. Enable UWF       2. Disable UWF        3. Filter Settings
 echo      4. Overlay Settings 5. Servicing Options  6. Exit
+<<<<<<< HEAD
 echo      7. UWF Restart      8. UWF Shutdown
+=======
+>>>>>>> 8f92a23824f4f02585b1bda8f716b62af46b3151
 set "OPT="
 set /p OPT=Select Option = 
 if /I "%OPT%"=="" goto :begin

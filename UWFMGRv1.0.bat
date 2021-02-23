@@ -240,5 +240,24 @@ goto :service
 :exit
 exit
 
+<<<<<<< HEAD
+=======
+:: UWF has a reboot process that is required.
+:rest
+cls
+color 06
+echo                              !!RESTARTING!!
+timeout -t 5 > NUL
+uwfmgr restart
+
+:: UWF has a shutdown process that stops windows from trying to make writes at shutdown causing delays in the process.
+:shut
+cls
+color 04
+echo                             !!SHUTTING DOWN!!
+timeout -t 5 > NUL
+uwfmgr shutdown
+
+>>>>>>> 8f92a23824f4f02585b1bda8f716b62af46b3151
 
 
